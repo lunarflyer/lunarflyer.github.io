@@ -66,11 +66,11 @@
 
 <script type="text/javascript">
 
-    var dappAddress = 'n1n1LnGSWJzLr9Wcy4kfSPKqzrSDzuuNRJP';
+    var dappAddress = 'n1tC9TeuqS27LpXrhQFfyoUb9UsYgMvTfQt';
     var nebulas = require("nebulas");
     var Account = nebulas.Account;
     var neb = new nebulas.Neb();
-    neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
 
     var data = [];
     var globalLoadFunc = null;
@@ -159,6 +159,7 @@
         serialNumber = nebPay.call(to, value, callFunction, callArgs, {
             listener: function(response){
                 alert("提交成功");
+                loadList();
                 console.log("response of push: " + JSON.stringify(resp));
             }
         });
